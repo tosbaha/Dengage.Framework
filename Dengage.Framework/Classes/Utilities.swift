@@ -230,3 +230,14 @@ extension Date {
         return self.timeIntervalSince1970 * 1000.0
     }
 }
+
+extension UIApplication {
+    static var safeShared: UIApplication? {
+        guard UIApplication.responds(to: NSSelectorFromString("sharedApplication")),
+            let unmanagedSharedApplication = UIApplication.perform(NSSelectorFromString("sharedApplication")) else {
+            return nil
+        }
+        return unmanagedSharedApplication.takeUnretainedValue() as? UIApplication
+    }
+}
+

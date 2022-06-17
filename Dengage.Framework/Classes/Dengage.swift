@@ -202,7 +202,7 @@ extension Dengage {
         
         openEventService.postOpenEvent(openEventHttpRequest: openEventHttpRequest)
         if settings.getBadgeCountReset() == true {
-           // UIApplication.shared.applicationIconBadgeNumber = 0
+            UIApplication.safeShared?.applicationIconBadgeNumber = 0
         }
     }
     

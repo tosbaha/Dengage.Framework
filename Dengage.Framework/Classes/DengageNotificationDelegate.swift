@@ -102,7 +102,7 @@ class DengageNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     final func openDeeplink(link: String?) {
         guard let urlString = link, let url = URL(string: urlString) else { return }
         os_log("TARGET_URL is %s", log: .default, type: .debug, link!)
-       // UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        UIApplication.safeShared?.open(url, options: [:], completionHandler: nil)
     }
 
     final func checkTargetUrl(content: UNNotificationContent) {
@@ -175,7 +175,7 @@ class DengageNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         
         openEventService.postOpenEvent(openEventHttpRequest: openEventHttpRequest)
         if settings.getBadgeCountReset() == true {
-       //     UIApplication.shared.applicationIconBadgeNumber = 0
+            UIApplication.safeShared?.applicationIconBadgeNumber = 0
         }
     }
 
@@ -195,7 +195,7 @@ class DengageNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
             transactionalOpenEventHttpRequest)
         
         if settings.getBadgeCountReset() == true {
-        //    UIApplication.shared.applicationIconBadgeNumber = 0
+            UIApplication.safeShared?.applicationIconBadgeNumber = 0
         }
     }
 }

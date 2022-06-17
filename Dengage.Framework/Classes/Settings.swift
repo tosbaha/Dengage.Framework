@@ -214,7 +214,7 @@ internal class Settings {
                 case .authorized:
                     DispatchQueue.main.async {
                         self?.logger.Log(message: "REGISTER_TOKEN", logtype: .debug)
-              //          UIApplication.shared.registerForRemoteNotifications()
+                        UIApplication.safeShared?.registerForRemoteNotifications()
                     }
                 default:
                     self?.setToken(token: "")
