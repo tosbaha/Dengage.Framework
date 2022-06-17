@@ -102,7 +102,7 @@ extension DengageNotificationCarouselView: UICollectionViewDelegateFlowLayout {
 extension DengageNotificationCarouselView: UICollectionViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let url = URL(string: payloads[indexPath.item].targetURL ?? "") ?? targetURL else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+   //     UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 

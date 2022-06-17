@@ -83,7 +83,7 @@ extension Dengage {
                 DispatchQueue.main.async {
 
                     logger.Log(message: "REGISTER_TOKEN", logtype: .debug)
-                    UIApplication.shared.registerForRemoteNotifications()
+                   // UIApplication.shared.registerForRemoteNotifications()
                 }
             }
         } 

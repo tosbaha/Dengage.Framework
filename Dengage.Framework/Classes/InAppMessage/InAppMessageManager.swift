@@ -200,7 +200,7 @@ extension InAppMessageManager: InAppMessagesActionsDelegate{
     func open(url: String?) {
         inAppMessageWindow = nil
         guard let urlString = url, let url = URL(string: urlString) else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    //    UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     func sendDissmissEvent(messageId: String?) {
